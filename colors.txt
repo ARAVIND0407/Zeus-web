@@ -1,0 +1,7 @@
+cyan- #00ffcc
+c-dark- #04bd98
+c-light- #2dfcd3
+
+red- #fa0000
+r-light- #fc4444
+r-dark- #a30202
