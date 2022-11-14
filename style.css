@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: 'PF DinDisplay Pro', sans-serif;
 }
+body{
+    background-color: #000;
+    z-index: -2;
+}
 
 #container {
     width: 100%;
@@ -20,9 +24,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: -1;
 }
 
 .video-holder video {
@@ -66,7 +71,8 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.02);
+    backdrop-filter: blur(10px);
     color: #fff;
     margin-top: 30px;
 }
@@ -77,6 +83,21 @@
 }
 .col-left h1{
     font-size: 50px;
+    position: relative;
+}
+.col-left h1::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.5s;
+}
+.col-left h1:hover::after{
+    width: 100%;
+    background: #fa0000;
 }
 .col-left p{
     padding: 20px 0;
@@ -92,6 +113,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    backdrop-filter: blur(10px);
 }
 .img-holder{
     flex-basis: 100%;
@@ -172,7 +194,6 @@
     }
     .col-right{
         flex-basis: 100%;
-        background-color: black;
         padding-bottom: 0;
         margin-bottom: 0;
     }
